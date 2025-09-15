@@ -3,251 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NemesisCyberForce | Digital Vigilantes</title>
+    <title>Nemesis Cyber Force | Offensive Security</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a2e',
+                        secondary: '#16213e',
+                        accent: '#0f3460',
+                        highlight: '#e94560',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Major+Mono+Display&display=swap');
-        .cyber-text {
-            text-shadow: 0 0 5px #00fffc, 0 0 10px #00fffc;
-        }
-        .cyber-border {
-            border: 1px solid #00fffc;
-            box-shadow: 0 0 10px #00fffc;
-        }
-        .cyber-hover:hover {
-            text-shadow: 0 0 8px #00fffc, 0 0 15px #00fffc;
-        }
-        .glitch {
-            position: relative;
-        }
-        .glitch::before, .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 #ff00ff;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim-1 2s infinite linear alternate-reverse;
-        }
-        .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 #00fffc;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim-2 2s infinite linear alternate-reverse;
-        }
-        @keyframes glitch-anim-1 {
-            0% { clip: rect(31px, 9999px, 94px, 0); }
-            10% { clip: rect(112px, 9999px, 76px, 0); }
-            20% { clip: rect(85px, 9999px, 77px, 0); }
-            30% { clip: rect(27px, 9999px, 97px, 0); }
-            40% { clip: rect(64px, 9999px, 98px, 0); }
-            50% { clip: rect(61px, 9999px, 85px, 0); }
-            60% { clip: rect(99px, 9999px, 114px, 0); }
-            70% { clip: rect(34px, 9999px, 115px, 0); }
-            80% { clip: rect(98px, 9999px, 129px, 0); }
-            90% { clip: rect(43px, 9999px, 96px, 0); }
-            100% { clip: rect(82px, 9999px, 64px, 0); }
-        }
-        @keyframes glitch-anim-2 {
-            0% { clip: rect(65px, 9999px, 119px, 0); }
-            10% { clip: rect(79px, 9999px, 66px, 0); }
-            20% { clip: rect(37px, 9999px, 115px, 0); }
-            30% { clip: rect(132px, 9999px, 74px, 0); }
-            40% { clip: rect(140px, 9999px, 79px, 0); }
-            50% { clip: rect(15px, 9999px, 9px, 0); }
-            60% { clip: rect(85px, 9999px, 38px, 0); }
-            70% { clip: rect(145px, 9999px, 54px, 0); }
-            80% { clip: rect(25px, 9999px, 103px, 0); }
-            90% { clip: rect(53px, 9999px, 49px, 0); }
-            100% { clip: rect(12px, 9999px, 149px, 0); }
-        }
-        .terminal {
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 1px solid #00fffc;
-            box-shadow: 0 0 15px #00fffc;
-        }
-        .terminal-header {
-            background-color: rgba(0, 15, 15, 0.7);
-            border-bottom: 1px solid #00fffc;
-        }
-        .terminal-body {
-            font-family: 'Share Tech Mono', monospace;
-        }
-        .typewriter {
-            overflow: hidden;
-            border-right: .15em solid #00fffc;
-            white-space: nowrap;
+        .max-content {
+            max-width: 80%;
             margin: 0 auto;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+        .gradient-text {
+            background: linear-gradient(90deg, #e94560 0%, #0f3460 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #00fffc }
+        .illustration {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .illustration::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(233,69,96,0.1) 0%, rgba(15,52,96,0) 70%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .no-script-overlay {
+            display: none;
         }
     </style>
 </head>
-<body class="bg-black text-gray-200 font-mono min-h-screen overflow-x-hidden" id="vanta-bg">
-    <div class="container mx-auto px-4 py-8">
-        <!-- Header -->
-        <header class="flex flex-col items-center justify-center mb-16">
-            <div class="glitch mb-4" data-text="NEMESIS CYBER FORCE">
-                <h1 class="text-5xl md:text-7xl font-bold text-center cyber-text font-major">NEMESIS CYBER FORCE</h1>
+<body class="bg-primary text-gray-100 min-h-screen">
+    <noscript>
+        <style>
+            body > *:not(.no-script-overlay) {
+                display: none;
+            }
+            .no-script-overlay {
+                display: flex !important;
+            }
+        </style>
+    </noscript>
+
+    <div class="no-script-overlay fixed inset-0 bg-black z-50 items-center justify-center p-8">
+        <div class="text-center max-w-2xl">
+            <h1 class="text-4xl font-bold text-highlight mb-4">JavaScript Required</h1>
+            <p class="text-xl mb-6">This website requires JavaScript to function properly. Please enable JavaScript in your browser settings to continue.</p>
+            <p class="text-sm opacity-75">Nemesis Cyber Force - Guardian of Digital Security</p>
+        </div>
+    </div>
+
+    <div id="app">
+        <nav class="bg-secondary py-4 sticky top-0 z-50 shadow-lg">
+            <div class="max-content flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i data-feather="shield" class="text-highlight"></i>
+                    <span class="text-xl font-bold gradient-text">NEMESIS CYBER FORCE</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#mission" class="hover:text-highlight transition hidden md:block">Mission</a>
+                    <a href="#about" class="hover:text-highlight transition hidden md:block">About</a>
+                    <a href="#values" class="hover:text-highlight transition hidden md:block">Values</a>
+                    <a href="https://github.com/NemesisCyberForce" target="_blank" class="hover:text-highlight transition" aria-label="GitHub Organization">
+                        <i data-feather="github" class="w-6 h-6"></i>
+                    </a>
+                </div>
+                <button class="md:hidden">
+                    <i data-feather="menu"></i>
+                </button>
             </div>
-            <div class="flex space-x-4 mb-8">
-                <span class="text-xl cyber-text">GUARDIAN</span>
-                <span class="text-xl cyber-text">|</span>
-                <span class="text-xl cyber-text">VENGEANCE</span>
-                <span class="text-xl cyber-text">|</span>
-                <span class="text-xl cyber-text">RETRIBUTION SECURITY</span>
-                <span class="text-xl cyber-text">|</span>
-                <span class="text-xl cyber-text">CYBER REPRISAL</span>
+        </nav>
 
-                
-            </div>
-            <div class="terminal cyber-border w-full max-w-4xl" data-aos="fade-up">
-                <div class="terminal-header p-3 flex items-center">
-                    <div class="flex space-x-2 mr-4">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+        <section id="home" class="py-20">
+            <div class="max-content">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <h1 class="text-5xl font-bold mb-6">GUARDIAN OF <span class="gradient-text">DIGITAL SECURITY</span></h1>
+                        <p class="text-lg mb-8 opacity-90">In Search of Freedom and Knowledge. Standing against ignorance and apathy in the digital world.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/NemesisCyberForce" target="_blank" class="bg-highlight hover:bg-opacity-90 text-white px-6 py-3 rounded-lg font-medium transition">Explore Projects</a>
+                            <a href="#about" class="border border-highlight text-highlight hover:bg-highlight hover:bg-opacity-10 px-6 py-3 rounded-lg font-medium transition">Learn More</a>
+                        </div>
                     </div>
-                    <div class="text-sm cyber-text">root@nemesis:~</div>
-                </div>
-                <div class="terminal-body p-6">
-                    <p class="mb-4 typewriter">Welcome to NemesisCyberForce - Digital Vigilantes</p>
-                    <p class="mb-4">> Initializing system...</p>
-                    <p class="mb-4">> Loading cyber protocols...</p>
-                    <p class="mb-4">> Establishing secure connection...</p>
-                    <p class="mb-4">> System ready.</p>
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="mb-16">
-            <section class="mb-16" data-aos="fade-up">
-                <div class="terminal cyber-border w-full max-w-4xl mx-auto">
-                    <div class="terminal-header p-3">
-                        <div class="text-sm cyber-text">root@nemesis:~</div>
-                    </div>
-                    <div class="terminal-body p-6">
-                        <h2 class="text-2xl mb-4 cyber-text">// MANIFESTO</h2>
-                        <p class="mb-4">Freedom, peace, and identity are illusions in the digital age.</p>
-                        <p class="mb-4">Trolls, racists, autocrats, dictators - all impose suffering through digital means.</p>
-                        <p class="mb-4">Even democracies are corrupted by digital lobbying and surveillance.</p>
-                        <p class="mb-4">We are the digital resistance.</p>
+                    <div data-aos="fade-left" class="illustration flex items-center justify-center">
+                        <div class="relative z-10 text-center p-8">
+                            <i data-feather="shield" class="w-16 h-16 mx-auto text-highlight mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">Vengeance Technologie</h3>
+                            <p class="opacity-80">Retribution Security - Cyber Reprisal</p>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            <section class="mb-16" data-aos="fade-up">
-                <div class="terminal cyber-border w-full max-w-4xl mx-auto">
-                    <div class="terminal-header p-3">
-                        <div class="text-sm cyber-text">root@nemesis:~</div>
-                    </div>
-                    <div class="terminal-body p-6">
-                        <h2 class="text-2xl mb-4 cyber-text">// OUR MISSION</h2>
-                        <p class="mb-4">>"I have nothing to hide" is the mantra of the ignorant.</p>
-                        <p class="mb-4">> Every vulnerable system is a weapon waiting to be used.</p>
-                        <p class="mb-4">> Security is not optional - it's survival.</p>
-                        <p class="mb-4">> Join us in the fight against digital apathy.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-16" data-aos="fade-up">
-                <div class="terminal cyber-border w-full max-w-4xl mx-auto">
-                    <div class="terminal-header p-3">
-                        <div class="text-sm cyber-text">root@nemesis:~</div>
-                    </div>
-                    <div class="terminal-body p-6">
-                        <h2 class="text-2xl mb-4 cyber-text">// OPERATIONS</h2>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <span class="text-green-400 mr-2">></span>
-                                <span>Creating exploits to expose systemic vulnerabilities</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-400 mr-2">></span>
-                                <span>Developing counter-surveillance techniques</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-400 mr-2">></span>
-                                <span>Building autonomous defense systems</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-400 mr-2">></span>
-                                <span>Targeting digital child exploitation networks</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-400 mr-2">></span>
-                                <span>Training the next generation of cyber vigilantes</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- CTA -->
-        <section class="mb-16 text-center" data-aos="fade-up">
-            <h2 class="text-3xl mb-8 cyber-text">JOIN THE RESISTANCE</h2>
-            <div class="flex justify-center space-x-4">
-                <a href="https://github.com/NemesisCyberForce/" class="px-8 py-3 cyber-border cyber-hover hover:bg-gray-900 transition duration-300">
-                    <i data-feather="github" class="inline mr-2"></i> GitHub
-                </a>
-                <a href="#" class="px-8 py-3 cyber-border cyber-hover hover:bg-gray-900 transition duration-300">
-                    <i data-feather="message-square" class="inline mr-2"></i> Discord
-                </a>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="text-center py-8 border-t border-gray-800">
-            <p class="mb-2">// SYSTEM STATUS: OPERATIONAL</p>
-            <p class="text-sm text-gray-500">© 2008-2025 NEMESIS CYBER FORCE | ALL SYSTEMS SECURE</p>
+        <section id="mission" class="py-16 bg-secondary">
+            <div class="max-content">
+                <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">OUR <span class="gradient-text">MISSION</span></h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-primary p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <i data-feather="eye" class="w-10 h-10 text-highlight mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Identify Vulnerabilities</h3>
+                        <p class="opacity-80">Discovering and responsibly disclosing security flaws to protect systems before they can be exploited.</p>
+                    </div>
+                    <div class="bg-primary p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <i data-feather="lock" class="w-10 h-10 text-highlight mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Strengthen Defenses</h3>
+                        <p class="opacity-80">Implementing robust security measures to safeguard against evolving digital threats.</p>
+                    </div>
+                    <div class="bg-primary p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <i data-feather="code" class="w-10 h-10 text-highlight mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Ethical Automation</h3>
+                        <p class="opacity-80">Developing tools that automate protection without compromising ethical standards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <div class="max-content">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right" class="illustration flex items-center justify-center">
+                        <div class="relative z-10 text-center p-8">
+                            <i data-feather="globe" class="w-16 h-16 mx-auto text-highlight mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">Digital Vigilance</h3>
+                            <p class="opacity-80">From Germany to the World</p>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <h2 class="text-3xl font-bold mb-6">ABOUT <span class="gradient-text">NEMESIS CYBER FORCE</span></h2>
+                        <p class="mb-4 opacity-90">Founded by Volkan Sah, Nemesis Cyber Force is a collective of security professionals dedicated to making the digital world safer through knowledge and action.</p>
+                        <p class="mb-4 opacity-90">We believe security should be a fundamental concern for everyone, not just tech enthusiasts. Our community learns, collaborates, and builds tools that protect and empower.</p>
+                        <p class="mb-6 opacity-90">We envision a safer digital future where people are aware of risks and take proactive measures to secure their digital lives.</p>
+                        <div class="flex items-center space-x-4">
+                            <a href="https://github.com/NemesisCyberForce" target="_blank" class="hover:text-highlight transition">
+                                <i data-feather="github" class="w-6 h-6"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="values" class="py-16 bg-secondary">
+            <div class="max-content">
+                <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">OUR <span class="gradient-text">VALUES</span></h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 rounded-lg border border-accent" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="font-bold text-lg mb-2">Freedom</h3>
+                        <p class="opacity-80 text-sm">Championing digital rights and privacy in an increasingly controlled world.</p>
+                    </div>
+                    <div class="p-6 rounded-lg border border-accent" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="font-bold text-lg mb-2">Knowledge</h3>
+                        <p class="opacity-80 text-sm">Pursuing deep understanding of security to combat ignorance and apathy.</p>
+                    </div>
+                    <div class="p-6 rounded-lg border border-accent" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="font-bold text-lg mb-2">Ethics</h3>
+                        <p class="opacity-80 text-sm">Maintaining the highest standards in all our security practices.</p>
+                    </div>
+                    <div class="p-6 rounded-lg border border-accent" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="font-bold text-lg mb-2">Justice</h3>
+                        <p class="opacity-80 text-sm">Standing against digital crimes that threaten human dignity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join" class="py-20">
+            <div class="max-content text-center">
+                <div data-aos="zoom-in">
+                    <h2 class="text-4xl font-bold mb-6">JOIN THE <span class="gradient-text">FORCE</span></h2>
+                    <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Become part of a learning community striving for a deeper understanding of our digital world.</p>
+                    <a href="https://github.com/NemesisCyberForce" target="_blank" class="bg-highlight hover:bg-opacity-90 text-white px-8 py-4 rounded-lg font-medium text-lg transition">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-primary border-t border-accent py-12">
+            <div class="max-content">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <i data-feather="shield" class="text-highlight"></i>
+                            <span class="text-xl font-bold">NEMESIS CYBER FORCE</span>
+                        </div>
+                        <p class="opacity-80 text-sm">Guardian - Vengeance Technologie - Retribution Security - Cyber Reprisal</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="opacity-80 hover:text-highlight transition text-sm">to top</a></li>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Connect</h4>
+                        <ul class="space-y-2">
+                            <li><a href="https://github.com/NemesisCyberForce" target="_blank" class="opacity-80 hover:text-highlight transition text-sm">GitHub</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Legal</h4>
+                        <p class="opacity-80 text-sm">We strictly reject any form of illegal activity. All our work is conducted within ethical and legal boundaries.</p>
+                    </div>
+                </div>
+                <div class="border-t border-accent mt-12 pt-8 text-center opacity-70 text-sm">
+                    <p>&copy; 2025 Nemesis Cyber Force. All rights reserved.</p>
+                </div>
+            </div>
         </footer>
     </div>
 
     <script>
-        VANTA.NET({
-            el: "#vanta-bg",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x00fffc,
-            backgroundColor: 0x0,
-            points: 12.00,
-            maxDistance: 22.00,
-            spacing: 17.00
-        });
-    </script>
-    <script>
         AOS.init({
-            duration: 1000,
+            duration: 800,
             once: true
         });
-    </script>
-    <script>
         feather.replace();
     </script>
 </body>
